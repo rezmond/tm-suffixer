@@ -30,3 +30,22 @@ class ViewsTestCases(TestCase, SnapshotTestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertMatchSnapshot(response.content.decode('utf-8'))
+
+    def test_scripts(self):
+        client = Client()
+
+        page = b'''
+        <!DOCTYPE html>
+        <html>
+            <body>
+                should have the mark
+                <script>should not have the mark</script>
+            </body>
+        </html>'
+        '''
+
+        with patch_response(page):
+            response = client.get('/test')
+
+        self.assertEqual(response.status_code, 200)
+        self.assertMatchSnapshot(response.content.decode('utf-8'))
