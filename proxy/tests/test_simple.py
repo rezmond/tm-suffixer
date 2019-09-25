@@ -1,7 +1,7 @@
 from snapshottest import TestCase
 
-from .core.replacer import Replacer
-from .core.utils import replace_text
+from proxy.core.replacer import Replacer
+from proxy.core.utils import replace_text
 
 
 class SimpleTestCases(TestCase):
