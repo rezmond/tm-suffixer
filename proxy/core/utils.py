@@ -8,10 +8,16 @@ from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 from bs4.element import Tag
 
+skip_list = {
+    'script',
+    'iframe',
+    'frame',
+}
+
 
 def iterate_nodes(tree: BeautifulSoup) -> Iterable:
     def run(node):
-        if node.name == 'script':
+        if node.name in skip_list:
             return
 
         yield node
