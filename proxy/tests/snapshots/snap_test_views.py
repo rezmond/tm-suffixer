@@ -22,3 +22,17 @@ snapshots['ViewsTestCases::test_scripts 1'] = '''
 </body>
 </html>'
         '''
+
+snapshots['ViewsTestCases::test_comments 1'] = '''
+<!DOCTYPE html>
+
+<html>
+<body>
+                should™ have the mark
+                <!--Should not be changed-->
+<b>
+<!--Should not be changed too-->
+</b>
+</body>
+</html>'
+        '''

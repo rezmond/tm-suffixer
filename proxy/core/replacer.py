@@ -2,7 +2,7 @@
 # author: makarov
 
 from bs4 import BeautifulSoup
-from bs4.element import NavigableString
+from bs4.element import NavigableString, Comment
 
 from .utils import iterate_nodes, replace_href, replace_text
 
@@ -21,7 +21,7 @@ class Replacer:
 
     def get_replaced(self) -> str:
         for node in iterate_nodes(self._src.body):
-            if isinstance(node, NavigableString):
+            if isinstance(node, NavigableString) and not isinstance(node, Comment):
                 node.string.replace_with(
                     replace_text(node.string, self.words_length))
 
