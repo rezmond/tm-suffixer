@@ -16,7 +16,7 @@ class ViewsTestCases(TestCase, SnapshotTestCase):
     def test_root(self):
         client = Client()
 
-        with patch_response(b'<html>sixsix</html>'):
+        with patch_response(b'<html><body>sixsix</body></html>'):
             response = client.get('/')
 
         self.assertEqual(response.status_code, 200)

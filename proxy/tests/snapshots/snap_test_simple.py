@@ -9,9 +9,9 @@ snapshots = Snapshot()
 
 snapshots['SimpleTestCases::test_replace 1'] = 'word longword Sixsix™'
 
-snapshots['SimpleTestCases::test_replace_certain_host 1'] = '<a href="/one/two"> anchor™ text </a>'
+snapshots['SimpleTestCases::test_replace_certain_host 1'] = '<body><a href="/one/two"> anchor™ text </a></body>'
 
-snapshots['SimpleTestCases::test_replace_certain_host 2'] = '<a href="https://medium.com/one/two"> anchor™ text </a>'
+snapshots['SimpleTestCases::test_replace_certain_host 2'] = '<body><a href="https://medium.com/one/two"> anchor™ text </a></body>'
 
 snapshots['SimpleTestCases::test_replace_html 1'] = '''<html>
 <body>
@@ -27,4 +27,4 @@ snapshots['SimpleTestCases::test_replace_html 1'] = '''<html>
             </body>
 </html>'''
 
-snapshots['SimpleTestCases::test_silent_no_existed_href 1'] = '<a class="anchor-class"> anchor™ text </a>'
+snapshots['SimpleTestCases::test_silent_no_existed_href 1'] = '<body><a class="anchor-class"> anchor™ text </a></body>'

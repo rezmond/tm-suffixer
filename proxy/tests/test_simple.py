@@ -10,15 +10,16 @@ class SimpleTestCases(TestCase):
         self.assertMatchSnapshot(replace_text('word longword Sixsix', 6))
 
     def test_silent_no_existed_href(self):
-        replacer = Replacer('<a class="anchor-class"> anchor text </a>')
+        replacer = Replacer(
+            '<body><a class="anchor-class"> anchor text </a></body>')
         self.assertMatchSnapshot(replacer.get_replaced())
 
     def test_replace_certain_host(self):
         replacer = Replacer(
-            '<a href="https://habr.com/one/two"> anchor text </a>')
+            '<body><a href="https://habr.com/one/two"> anchor text </a></body>')
         self.assertMatchSnapshot(replacer.get_replaced())
         replacer = Replacer(
-            '<a href="https://medium.com/one/two"> anchor text </a>')
+            '<body><a href="https://medium.com/one/two"> anchor text </a></body>')
         self.assertMatchSnapshot(replacer.get_replaced())
 
     def test_replace_html(self):
