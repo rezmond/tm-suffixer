@@ -20,7 +20,7 @@ class Replacer:
         self._src = BeautifulSoup(src, features='html.parser')
 
     def get_replaced(self) -> str:
-        for node in iterate_nodes(self._src):
+        for node in iterate_nodes(self._src.body):
             if isinstance(node, NavigableString):
                 node.string.replace_with(
                     replace_text(node.string, self.words_length))
