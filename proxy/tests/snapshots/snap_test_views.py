@@ -11,3 +11,14 @@ snapshots['ViewsTestCases::test_root 1'] = '<html><body>sixsix™</body></html>'
 
 snapshots['ViewsTestCases::test_doctype 1'] = '''<!DOCTYPE html>
 <html><body>test</body></html>'''
+
+snapshots['ViewsTestCases::test_scripts 1'] = '''
+<!DOCTYPE html>
+
+<html>
+<body>
+                should™ have the mark
+                <script>should not have the mark</script>
+</body>
+</html>'
+        '''

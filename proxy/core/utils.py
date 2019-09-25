@@ -11,6 +11,9 @@ from bs4.element import Tag
 
 def iterate_nodes(tree: BeautifulSoup) -> Iterable:
     def run(node):
+        if node.name == 'script':
+            return
+
         yield node
         children = getattr(node, 'children', [])
         for sub in children:
